@@ -11,12 +11,12 @@ body {
     margin: 0.5rem 0;
 }
 
-.counter {
+.counter, .timer {
     font-size: 1.3rem;
     margin: 0;
 }
 
-#move-counter {
+#moves, #time {
     text-decoration: underline;
     font-weight: bold;
 }

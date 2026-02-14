@@ -7,33 +7,34 @@
 </head>
 <body>
 <h1 class="title">5x5 Slider Puzzle</h1>
-<p class="counter">Moves: <span id="move-counter">0</span></p>
+<p class="counter">Moves: <span id="moves">0</span></p>
+<p class="timer">Time: <span id="time">00:00</span></p>
 <div id="puzzle">
-    <img class="tile" src="assets/images/puzzle/pieces/T.png" alt="puzzle" data-piece="T" data-letter="L"/>
-    <img class="tile" src="assets/images/puzzle/pieces/M.png" alt="puzzle" data-piece="M" data-letter="M"/>
-    <img class="tile" src="assets/images/puzzle/pieces/4.png" alt="puzzle" data-piece="4" data-letter="B"/>
-    <img class="tile" src="assets/images/puzzle/pieces/0.png" alt="puzzle" data-piece="0" data-letter=" "/>
-    <img class="tile" src="assets/images/puzzle/pieces/G.png" alt="puzzle" data-piece="G" data-letter="O"/>
-    <img class="tile" src="assets/images/puzzle/pieces/N.png" alt="puzzle" data-piece="N" data-letter="U"/>
-    <img class="tile" src="assets/images/puzzle/pieces/S.png" alt="puzzle" data-piece="S" data-letter="I"/>
-    <img class="tile" src="assets/images/puzzle/pieces/1.png" alt="puzzle" data-piece="1" data-letter="G"/>
-    <img class="tile" src="assets/images/puzzle/pieces/B.png" alt="puzzle" data-piece="B" data-letter="T"/>
-    <img class="tile" src="assets/images/puzzle/pieces/I.png" alt="puzzle" data-piece="I" data-letter="O"/>
-    <img class="tile" src="assets/images/puzzle/pieces/C.png" alt="puzzle" data-piece="C" data-letter="E"/>
-    <img class="tile" src="assets/images/puzzle/pieces/F.png" alt="puzzle" data-piece="F" data-letter="C"/>
-    <img class="tile" src="assets/images/puzzle/pieces/R.png" alt="puzzle" data-piece="R" data-letter="O"/>
-    <img class="tile" src="assets/images/puzzle/pieces/A.png" alt="puzzle" data-piece="A" data-letter="R"/>
-    <img class="tile" src="assets/images/puzzle/pieces/3.png" alt="puzzle" data-piece="3" data-letter="S"/>
-    <img class="tile empty" src="assets/images/puzzle/pieces/X.png" alt="puzzle" data-piece="!" data-letter="!"/>
-    <img class="tile" src="assets/images/puzzle/pieces/O.png" alt="puzzle" data-piece="O" data-letter="P"/>
-    <img class="tile" src="assets/images/puzzle/pieces/H.png" alt="puzzle" data-piece="H" data-letter="F"/>
-    <img class="tile" src="assets/images/puzzle/pieces/P.png" alt="puzzle" data-piece="P" data-letter="T"/>
-    <img class="tile" src="assets/images/puzzle/pieces/9.png" alt="puzzle" data-piece="9" data-letter="R"/>
-    <img class="tile" src="assets/images/puzzle/pieces/E.png" alt="puzzle" data-piece="E" data-letter="D"/>
-    <img class="tile" src="assets/images/puzzle/pieces/D.png" alt="puzzle" data-piece="D" data-letter="A"/>
-    <img class="tile" src="assets/images/puzzle/pieces/J.png" alt="puzzle" data-piece="J" data-letter="E"/>
-    <img class="tile" src="assets/images/puzzle/pieces/U.png" alt="puzzle" data-piece="U" data-letter=" "/>
-    <img class="tile" src="assets/images/puzzle/pieces/L.png" alt="puzzle" data-piece="L" data-letter="L"/>
+    <img class="tile" src="/assets/images/puzzle/pieces/N.png" alt="puzzle" data-piece="N" data-letter="U">
+    <img class="tile" src="/assets/images/puzzle/pieces/D.png" alt="puzzle" data-piece="D" data-letter="A">
+    <img class="tile" src="/assets/images/puzzle/pieces/M.png" alt="puzzle" data-piece="M" data-letter="M">
+    <img class="tile" src="/assets/images/puzzle/pieces/4.png" alt="puzzle" data-piece="4" data-letter="B">
+    <img class="tile" src="/assets/images/puzzle/pieces/A.png" alt="puzzle" data-piece="A" data-letter="R">
+    <img class="tile" src="/assets/images/puzzle/pieces/F.png" alt="puzzle" data-piece="F" data-letter="C">
+    <img class="tile" src="/assets/images/puzzle/pieces/T.png" alt="puzzle" data-piece="T" data-letter="L">
+    <img class="tile" src="/assets/images/puzzle/pieces/R.png" alt="puzzle" data-piece="R" data-letter="O">
+    <img class="tile" src="/assets/images/puzzle/pieces/L.png" alt="puzzle" data-piece="L" data-letter="L">
+    <img class="tile" src="/assets/images/puzzle/pieces/J.png" alt="puzzle" data-piece="J" data-letter="E">
+    <img class="tile" src="/assets/images/puzzle/pieces/3.png" alt="puzzle" data-piece="3" data-letter="S">
+    <img class="tile" src="/assets/images/puzzle/pieces/0.png" alt="puzzle" data-piece="0" data-letter=" ">
+    <img class="tile" src="/assets/images/puzzle/pieces/E.png" alt="puzzle" data-piece="E" data-letter="D">
+    <img class="tile" src="/assets/images/puzzle/pieces/1.png" alt="puzzle" data-piece="1" data-letter="G">
+    <img class="tile empty" src="/assets/images/puzzle/pieces/X.png" alt="puzzle" data-piece="!" data-letter="!">
+    <img class="tile" src="/assets/images/puzzle/pieces/S.png" alt="puzzle" data-piece="S" data-letter="I">
+    <img class="tile" src="/assets/images/puzzle/pieces/9.png" alt="puzzle" data-piece="9" data-letter="R">
+    <img class="tile" src="/assets/images/puzzle/pieces/O.png" alt="puzzle" data-piece="O" data-letter="P">
+    <img class="tile" src="/assets/images/puzzle/pieces/U.png" alt="puzzle" data-piece="U" data-letter=" ">
+    <img class="tile" src="/assets/images/puzzle/pieces/B.png" alt="puzzle" data-piece="B" data-letter="T">
+    <img class="tile" src="/assets/images/puzzle/pieces/C.png" alt="puzzle" data-piece="C" data-letter="E">
+    <img class="tile" src="/assets/images/puzzle/pieces/H.png" alt="puzzle" data-piece="H" data-letter="F">
+    <img class="tile" src="/assets/images/puzzle/pieces/P.png" alt="puzzle" data-piece="P" data-letter="T">
+    <img class="tile" src="/assets/images/puzzle/pieces/G.png" alt="puzzle" data-piece="G" data-letter="O">
+    <img class="tile" src="/assets/images/puzzle/pieces/I.png" alt="puzzle" data-piece="I" data-letter="O">
 </div>
 <script src="assets/scripts/puzzle.js"></script>
 </body>

@@ -1,11 +1,16 @@
 const nonce = `TNM4ASE1JUFD3BLC09RIHPGO!`
 const puzzle = document.getElementById("puzzle");
 const tiles = document.getElementsByClassName("tile");
-const counter = document.getElementById("move-counter");
+const counter = document.getElementById("moves");
+const timerDisplay = document.getElementById("time");
 const size = 5;
 
-let emptyIndex = 15;
+let emptyIndex = 14;
 let moves = 0;
+let timerInterval;
+let secondsElapsed = 0;
+let timerStarted = false;
+
 
 function isEmptyTileAdjacent(index) {
     const emptyRow = Math.floor(emptyIndex / size);
@@ -21,6 +26,7 @@ function tryMove(index) {
     const isAdjacent = isEmptyTileAdjacent(index);
     if (!isAdjacent) return;
 
+    startTimer();
     swapTiles(tiles[index], tiles[emptyIndex]);
     incrementMoves();
     emptyIndex = index;
@@ -57,6 +63,19 @@ function incrementMoves() {
     counter.textContent = `${moves}`;
 }
 
+function startTimer() {
+    if (timerStarted) return; // start only once
+    timerStarted = true;
+
+    timerInterval = setInterval(() => {
+        secondsElapsed++;
+        const mins = Math.floor(secondsElapsed / 60).toString().padStart(2, "0");
+        const secs = (secondsElapsed % 60).toString().padStart(2, "0");
+        timerDisplay.textContent = `${mins}:${secs}`;
+    }, 1000);
+}
+
+
 function checkSolved() {
     const _tiles = Array.from(tiles).map((i) => ({
         piece: i.attributes["data-piece"].nodeValue,
@@ -65,10 +84,11 @@ function checkSolved() {
     const secret = _tiles.map(tile => tile.piece).join("");
     const message = _tiles.map(tile => tile.letter).join("");
 
-    return { isSolved: secret === nonce, message };
+    return {isSolved: secret === nonce, message};
 }
 
 function stopUserFromPlaying() {
+    clearInterval(timerInterval);
     puzzle.removeEventListener("click", onUserInput);
 }
 
