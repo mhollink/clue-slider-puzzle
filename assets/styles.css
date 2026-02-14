@@ -1,0 +1,51 @@
+body {
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.title {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
+
+.counter {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+#move-counter {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#puzzle {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(5, 100px);
+    gap: 3px;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 6px;
+    background: #111;
+    transition: transform 0.15s ease;
+}
+
+.tile:hover {
+    transform: scale(1.03);
+    outline: 5px #111;
+}
+
+.empty {
+    background: none;
+    cursor: default;
+    visibility: hidden;
+}
